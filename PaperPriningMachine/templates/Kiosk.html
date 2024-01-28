@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiosk</title>
+    <style>
+        body{
+            display: grid;
+            grid-template-rows: 100vh;
+            grid-template-columns: 100vw;
+            background-color: lightblue;
+        }
+        #container{
+            justify-self: center;
+            align-self: center;
+        }
+        button{
+            height: 20vh;
+            width: 50vh;
+            font-size: 15vh;
+            font-family: sans-serif;
+            border-radius: 2vh;
+            border-width: 3px;
+        }
+        #ScanQR{
+            display: none;
+            font-size: 8vh;
+        }
+    </style>
+    <script>
+        function removeButton() {
+            var button = document.querySelector("#container button");
+            var displayText = document.getElementById("ScanQR");
+            button.style.display = "none";
+            displayText.style.display = "block";
+            window.location.href = "http://127.0.0.1:5000/ScanQR";
+
+            // setTimeout(function () {
+            //     displayText.style.display = "none";
+            //     button.style.display = "block";
+            // }, 120000);
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <a>
+            <button onclick="removeButton()">Scan</button>
+        </a>
+        <h1 id="ScanQR">Show the QR Received in Front of Camera</h1>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Camera Feed with SocketIO</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+        socket.on('image', function (frame_data) {
+            document.getElementById('video_feed').src = 'data:image/jpeg;base64,' + frame_data;
+        });
+    </script>
+</head>
+<body>
+    <h1>Live Camera Feed with SocketIO</h1>
+    <img id="video_feed" alt="Camera Feed" style="max-width: 100%;">
+</body>
+</html>
