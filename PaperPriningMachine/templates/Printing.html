@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Printing</title>
+    <script>
+        function collect() {
+            document.getElementById("Printing").style.display = "none";
+            document.getElementById("Collect").style.display = "block";
+            setTimeout(function (){ window.location.href = "/"; }, 10000)
+        }
+        fetch('Print?fid={{ a }}').then(collect)
+    </script>
+    <style>
+    body{
+        display: grid;
+        grid-template-rows: 98vh;
+        grid-template-columns: 100vw;
+        background-color: lightblue;
+    }
+    #container{
+        justify-self: center;
+        align-self: center;
+    }
+    h1{
+        font-size: 8vh;
+    }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 id="Printing">Printing Your Documents</h1>
+        <h1 id="Collect" style="display: none">Please Collect Your Documents</h1>
+    </div>
+</body>
+</html>
