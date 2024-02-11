@@ -8,7 +8,7 @@
 <body>
     <h1>Upload File</h1>
     <form action="/uploadFiles" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" accept=".pdf image/*">
+        <input type="file" name="files[]" accept=".pdf .png .jpg .jpeg .docx .doc" multiple>
         <button type="submit">Upload</button>
     </form>
 </body>

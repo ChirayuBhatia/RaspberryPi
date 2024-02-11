@@ -5,7 +5,6 @@ import requests
 from picamera import PiCamera
 from picamera.array import PiRGBArray
 import os
-import cups
 
 app = Flask(__name__)
 

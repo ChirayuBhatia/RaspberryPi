@@ -16,10 +16,16 @@
 		</div>
 		<div class="container-md border">
 			<div class="row-3md border">
-				<div class="col text-center">
-					<h2><label for="formFileLg" class="form-label">Upload Files to Print</label></h2>
-					<input class="form-control form-control-lg" id="formFileLg" type="file" accept=".pdf, image/*" multiple>
-				</div>
+				<form action="/uploadFiles" method="POST" enctype="multipart/form-data">
+					<div class="mb-3">
+						<h2>
+							<label for="formFileLg" class="form-label">Upload Files to Print</label>
+						</h2>
+						<input class="form-control form-control-lg" id="formFileLg" type="file" name="files[]"
+							   accept="application/pdf, image/png, image/jpg, image/jpeg, .docx, .doc" multiple>
+					</div>
+					<input class="btn btn-primary" type="submit" value="Submit">
+				</form>
 			</div>
 		</div>
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
