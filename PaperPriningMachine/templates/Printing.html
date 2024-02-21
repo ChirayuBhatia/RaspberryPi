@@ -7,9 +7,11 @@
         function collect() {
             document.getElementById("Printing").style.display = "none";
             document.getElementById("Collect").style.display = "block";
-            setTimeout(function (){ window.location.href = "/"; }, 10000)
+            setTimeout(function () {
+                window.location.href = "/";
+            }, 10000)
         }
-        fetch('Print?fid={{ a }}').then(collect)
+        fetch('Print/{{ fid }}/{{ count }}').then(collect);
     </script>
     <style>
     body{
